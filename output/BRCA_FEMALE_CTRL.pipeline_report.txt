@@ -1,0 +1,22 @@
+=== RELATÓRIO FINAL - PIPELINE BRCA ===
+Data: Thu Aug 21 04:38:58 PM EDT 2025
+Amostra: BRCA_FEMALE_CTRL
+
+=== ESTATÍSTICAS DE ALINHAMENTO ===
+125953 + 0 mapped (97.93% : N/A)
+125574 + 0 properly paired (97.68% : N/A)
+
+=== VARIANTES ENCONTRADAS ===
+HIGH: 2
+MODERATE: 2
+LOW: 10
+MODIFIER: 73
+
+=== VARIANTES HIGH (DETALHES) ===
+chr13	32914174	C	G
+chr17	41222948	TTCTTCTGGGGTCAGGCCAGA	TA
+
+=== INTERPRETAÇÃO FASTQC ===
+FAILs/WARNINGS:
+- Sequence Duplication Levels: Corrigido por MarkDuplicates
+- Demais warnings: Dentro do esperado para dados clínicos
