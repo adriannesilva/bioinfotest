@@ -36,12 +36,10 @@ if [ ! -f ${OUTDIR}/${PREFIX}.sorted.bam ]; then
   samtools index ${OUTDIR}/${PREFIX}.sorted.bam
   
   # Estatísticas pós-alinhamento
-  echo "[INFO] Estatísticas de alinhamento..."
   samtools flagstat ${OUTDIR}/${PREFIX}.sorted.bam > ${OUTDIR}/${PREFIX}.sorted.flagstat.txt
   samtools idxstats ${OUTDIR}/${PREFIX}.sorted.bam > ${OUTDIR}/${PREFIX}.sorted.idxstats.txt
   
   # FastQC pós-alinhamento
-  echo "[INFO] FastQC do BAM alinhado..."
   fastqc ${OUTDIR}/${PREFIX}.sorted.bam -o ${OUTDIR}/fastqc_processed --quiet
 fi
 
@@ -59,11 +57,9 @@ if [ ! -f ${OUTDIR}/${PREFIX}.markdup.bam ]; then
   samtools index ${OUTDIR}/${PREFIX}.markdup.bam
   
   # Estatísticas pós-duplicatas
-  echo "[INFO] Estatísticas pós-remoção de duplicatas..."
   samtools flagstat ${OUTDIR}/${PREFIX}.markdup.bam > ${OUTDIR}/${PREFIX}.markdup.flagstat.txt
   
   # FastQC pós-remoção de duplicatas
-  echo "[INFO] FastQC do BAM pós-duplicatas..."
   fastqc ${OUTDIR}/${PREFIX}.markdup.bam -o ${OUTDIR}/fastqc_processed --quiet
 fi
 
@@ -102,8 +98,6 @@ fi
 # ==============================
 # 6. Relatório final
 # ==============================
-
-echo "[INFO] Gerando relatório final..."
 {
   echo "=== RELATÓRIO FINAL - PIPELINE BRCA ==="
   echo "Data: $(date)"
